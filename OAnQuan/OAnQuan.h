@@ -31,6 +31,6 @@ public:
 	bool IsCurrentPlayerPlayable();
 	void Play(int pos, int direction);
 	void Begin();
-	void Xuat();
+	void Print();
 };
 

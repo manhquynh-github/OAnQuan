@@ -117,10 +117,10 @@ bool OAnQuan::IsGameOver()
 			B.setStatus(Player::WIN);
 			cout << "2 WIN" << endl;
 		}
-		//else
-		//cout << endl << "Hue!" << endl;
+		else
+		cout << endl << "Hue!" << endl;
 
-		//cout << "Ti so: (" << A.getMoney() << "||" << B.getMoney() << ")" << endl;
+		cout << "Ti so: (" << A.getMoney() << "||" << B.getMoney() << ")" << endl;
 	}
 
 	return igo;
@@ -139,7 +139,7 @@ bool OAnQuan::IsCurrentPlayerPlayable()
 			for (int i = 1; i <= 5; i++, p = p->getpNext())
 				p->getData2()->AddValue(1);
 
-			Xuat();
+			Print();
 		}
 	}
 
@@ -163,7 +163,7 @@ void OAnQuan::Play(int pos, int direction)
 			value--;
 		}
 
-		//Xuat();
+		//Print();
 
 		Node<O> *p1 = getpNext(p, direction), *p2 = getpNext(p1, direction);
 
@@ -174,7 +174,7 @@ void OAnQuan::Play(int pos, int direction)
 				getCurrentPlayer().Eat(p2->getData2()->Consume());
 				p1 = getpNext(p2, direction);
 				p2 = getpNext(p1, direction);
-				//Xuat();
+				//Print();
 			}
 			break;
 		}
@@ -184,7 +184,7 @@ void OAnQuan::Play(int pos, int direction)
 		}
 		else
 			break;
-		//Xuat();
+		//Print();
 	}
 	switchTurn();
 }
@@ -197,15 +197,15 @@ void OAnQuan::Begin()
 	{
 		do
 		{
-			//cout << "Nguoi choi " << getTurn() + 1 << ": ";
+			cout << "Nguoi choi " << getTurn() + 1 << ": ";
 			cin >> pos >> dir;
 		} while (getPos(pos) == false || (dir != 'T' && dir != 'P') || Os[pos].getValue() == 0);
 		Play(pos, (dir == 'T') ? TRAI : PHAI);
-		Xuat();
+		Print();
 	}
 }
 
-void OAnQuan::Xuat()
+void OAnQuan::Print()
 {
 	Node<O> *p = Os.Front();
 	int type = O::OQUAN;

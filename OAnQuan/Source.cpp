@@ -5,7 +5,7 @@
 void main()
 {
 	OAnQuan o = OAnQuan();
-	o.Xuat();
+	o.Print();
 	o.Begin();
 
 	_getch();

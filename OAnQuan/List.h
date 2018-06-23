@@ -321,5 +321,5 @@ inline void List<T>::Print()
 template <class T>
 List<T>::~List()
 {
-	//Clear();
+	Clear();
 }
